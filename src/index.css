@@ -1,0 +1,61 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.top-container {
+	padding: 20px;
+	background-color: white;
+	height: 100vh;
+	margin: auto;
+	/* border-style: solid;
+	border-color: red; */
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+	margin: auto;
+}
+
+.split {
+    display: flex;
+    flex-direction: row;
+	height: 100%;
+	background-color: black;
+}
+
+.group {
+	/* background-color: red; */
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+}
+.tab-bar {
+	background-color: black;
+	flex: 0 0 25px;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #808080;
+}
+.editor {
+	/*background-color: green; */
+	flex: 1 1 auto;
+	height: 100%;
+}
+
+.gutter {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: 50%;
+	color: #404040;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+}
+.monaco-editor {
+	position: absolute;
+}
