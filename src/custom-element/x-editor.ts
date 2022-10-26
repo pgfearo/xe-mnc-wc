@@ -43,6 +43,8 @@ export class XEditor extends HTMLElement {
 
         const newEditor1 = plEditor(leftPanel);
         const newEditor2 = plEditor(rightPanel);
+
+        newEditor1.setValue("<test/>");
     }
 
     disconnectedCallback() {

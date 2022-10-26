@@ -12,7 +12,11 @@ const legend: monaco.languages.SemanticTokensLegend = {
 	]
 };
 
-monaco.languages.registerDocumentSemanticTokensProvider('plaintext', {
+const xsltLang = 'xslt';
+
+monaco.languages.register({ id: xsltLang});
+
+monaco.languages.registerDocumentSemanticTokensProvider(xsltLang, {
 	getLegend: function () {
 		return legend;
 	},
@@ -67,7 +71,7 @@ exclude-result-prefixes="#all"
 expand-text="yes"
 version="3.0">
 
-<xsl:variable select="for $a in (@*, parent::*/node()) 
+<xsl:variable name="new" select="for $a in (@*, parent::*/node()) 
           return count($a)"/>
 
 </xsl:stylesheet>`;
@@ -75,7 +79,7 @@ version="3.0">
 export function plEditor(targetElement: HTMLElement) {
     const newEditor = monaco.editor.create(targetElement, {
         value: xsltInit,
-        language: 'plaintext',
+        language: xsltLang,
         theme: 'xsltTheme',
         // semantic tokens provider is disabled by default
 		'semanticHighlighting.enabled': true,

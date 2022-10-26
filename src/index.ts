@@ -1,6 +1,4 @@
-import { plEditor } from './monaco/highlighting';
 import './index.css';
-import Split from 'split.js';
 import { XEditor } from './custom-element/x-editor'
 
 // @ts-ignore
