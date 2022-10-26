@@ -2,11 +2,18 @@ import Split from "split.js";
 import { plEditor } from "../monaco/highlighting";
 
 export class XEditor extends HTMLElement {
+    static get observedAttributes() {
+        return ['height'];
+    }
+
+    private height: string|null = null;
+
     constructor() {
         super();
+        this.height = this.getAttribute('height');
     }
     connectedCallback() {
-        const editorHeight = '100%';
+        const editorHeight = this.height? this.height : '100%';
         const splitHTML = `
 <div class="split">
     <div id="split-0">

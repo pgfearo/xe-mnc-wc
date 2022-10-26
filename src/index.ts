@@ -27,8 +27,9 @@ bodyDiv.className = "top-container";
 
 
 const testHTML = `
-<div style="height:100%;background-color:green;padding:10px">
-  <xslt-editor></xslt-editor>
+<div style="height:calc(100vh - 200px);background-color:green;padding:10px">
+  <!--<div style="height:calc(100vh - 220px);background-color:red;">red</div>-->
+  <xslt-editor height="100%"></xslt-editor>
 </div>
 `
 	
