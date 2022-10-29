@@ -32,6 +32,10 @@ module.exports = {
 			{
 				test: /\.ttf$/,
 				use: ['file-loader']
+			},
+			{
+				test: /\.(xml|xsl)$/,
+				type: 'asset/source',
 			}
 		]
 	},

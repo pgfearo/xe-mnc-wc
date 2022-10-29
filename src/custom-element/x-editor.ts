@@ -1,4 +1,5 @@
 import Split from "split.js";
+import testSource from '../assets/test.xsl';
 import { plEditor } from "../monaco/highlighting";
 
 export class XEditor extends HTMLElement {
@@ -12,7 +13,7 @@ export class XEditor extends HTMLElement {
         super();
         this.height = this.getAttribute('height');
     }
-    connectedCallback() {
+    async connectedCallback() {
         const editorHeight = this.height? this.height : '100%';
         const splitHTML = `
 <div class="split">
@@ -50,6 +51,10 @@ export class XEditor extends HTMLElement {
 
         const newEditor1 = plEditor(leftPanel);
         const newEditor2 = plEditor(rightPanel);
+
+        //const response = await fetch('assets/test.xsl');
+        //console.log('response', response);
+        console.log('test.xsl', testSource);
 
         newEditor1.setValue("<test/>");
     }
